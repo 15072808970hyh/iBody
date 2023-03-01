@@ -1,5 +1,6 @@
 package org.springboot;
 
+import org.springboot.Demo01.Entity.HealthDataResult;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
