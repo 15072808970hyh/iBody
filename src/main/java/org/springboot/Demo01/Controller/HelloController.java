@@ -1,6 +1,8 @@
 package org.springboot.Demo01.Controller;
 
+import org.springboot.Demo01.Demo01Constasnt.MultiResultVo;
 import org.springboot.Demo01.Entity.HealthDataResult;
+import org.springboot.Demo01.Entity.req.QueryAllPersonRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +13,8 @@ public class HelloController {
      * @return
      */
     @GetMapping("/hello")
-    public  String hello(){
+    public MultiResultVo hello(QueryAllPersonRequest queryAllPersonRequest){
+        MultiResultVo multiResultVo = new MultiResultVo();
 
         HealthDataResult personOne = new HealthDataResult("小民",11,11,11);
 
@@ -26,6 +29,6 @@ public class HelloController {
         System.out.println(personFour.toString());
         System.out.println("ExerciseTimePerWeek:" + personFour.getExerciseTimePerWeek());
 
-        return "hello Springboot测试哦";
+        return multiResultVo;
     }
 }
